@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# 🕹️ COMMIT CITY ARCADE
+# Insert Coin.d
 
 **Smash bugs. Fix builds. Repeat.**
 
