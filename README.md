@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# Insert Coin.d
+# Insert Coin
 
 **Smash bugs. Fix builds. Repeat.**
 
