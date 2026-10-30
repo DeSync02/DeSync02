@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%">
+  <defs>
+    <radialGradient id="sig" cx="50%" cy="0%" r="90%">
+      <stop offset="0" stop-color="#f5c518" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#f5c518" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0e17"/><stop offset="1" stop-color="#05060a"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1000" height="280" rx="14" fill="url(#bg)"/>
+  <rect width="1000" height="280" rx="14" fill="url(#sig)"/>
+  <g fill="#10141f">
+    <rect x="0" y="215" width="60" height="65"/><rect x="60" y="190" width="45" height="90"/>
+    <rect x="105" y="225" width="70" height="55"/><rect x="175" y="170" width="40" height="110"/>
+    <rect x="215" y="205" width="80" height="75"/><rect x="295" y="185" width="50" height="95"/>
+    <rect x="345" y="225" width="90" height="55"/><rect x="565" y="215" width="80" height="65"/>
+    <rect x="645" y="180" width="45" height="100"/><rect x="690" y="220" width="70" height="55"/>
+    <rect x="760" y="165" width="42" height="115"/><rect x="802" y="200" width="75" height="80"/>
+    <rect x="877" y="180" width="50" height="100"/><rect x="927" y="215" width="73" height="65"/>
+  </g>
+  <g transform="translate(500,60)" filter="url(#glow)">
+    <ellipse rx="62" ry="36" fill="#f5c518"/>
+    <path d="M0,-18 C-6,-26 -10,-28 -14,-26 L-16,-34 L-26,-24 C-40,-30 -58,-26 -70,-14 C-62,-10 -56,-4 -52,6 C-44,-2 -36,-2 -30,4 C-24,2 -16,6 -12,14 C-8,18 -4,22 0,32 C4,22 8,18 12,14 C16,6 24,2 30,4 C36,-2 44,-2 52,6 C56,-4 62,-10 70,-14 C58,-26 40,-30 26,-24 L16,-34 L14,-26 C10,-28 6,-26 0,-18 Z" transform="scale(.8)" fill="#0b0e17"/>
+  </g>
+  <text x="500" y="26" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="8" fill="#6b7a99">THE DARK KNIGHT OF CODE</text>
+  <text x="500" y="170" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="92" letter-spacing="4" fill="#f5c518" stroke="#000" stroke-width="2">DESYNC02</text>
+  <text x="500" y="214" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="10" fill="#e8eaf0">I AM THE COMMIT</text>
+  <rect x="380" y="234" width="240" height="3" fill="#f5c518" opacity=".7"/>
+</svg>

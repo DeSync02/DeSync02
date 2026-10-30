@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 150" width="100%">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141a2b"/><stop offset="1" stop-color="#0a0c14"/></linearGradient></defs>
+  <rect width="1000" height="150" rx="12" fill="url(#g)" stroke="#f5c518" stroke-opacity=".35"/>
+  <circle cx="75" cy="75" r="42" fill="#f5c518"/>
+  <text x="75" y="90" text-anchor="middle" font-family="Impact, sans-serif" font-size="40" fill="#0b0e17">DS</text>
+  <text x="145" y="52" font-family="monospace" font-size="12" letter-spacing="4" fill="#f5c518">GOTHAM'S FRIENDLY VIGILANTE</text>
+  <text x="145" y="92" font-family="Impact, sans-serif" font-size="38" fill="#fff">DeSync02</text>
+  <text x="145" y="120" font-family="sans-serif" font-size="16" fill="#aab3c8">Student · Machine Learning &amp; Data Science</text>
+  <g transform="translate(900,78) scale(1.1)" fill="#f5c518" opacity=".9"><path d="M0,-18 C-6,-26 -10,-28 -14,-26 L-16,-34 L-26,-24 C-40,-30 -58,-26 -70,-14 C-62,-10 -56,-4 -52,6 C-44,-2 -36,-2 -30,4 C-24,2 -16,6 -12,14 C-8,18 -4,22 0,32 C4,22 8,18 12,14 C16,6 24,2 30,4 C36,-2 44,-2 52,6 C56,-4 62,-10 70,-14 C58,-26 40,-30 26,-24 L16,-34 L14,-26 C10,-28 6,-26 0,-18 Z"/></g>
+</svg>
