@@ -38,7 +38,7 @@
 
 <sub>_Auto-refreshed every night at 12:00 AM (Manila) by GitHub Actions._</sub>
 
-<img src="stats.svg" alt="GitHub stats" width="100%"/>
+<img src="./assets/stats.svg" alt="GitHub stats" width="100%"/>
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=DeSync02&background=0B0E17&ring=F5C518&fire=F5C518&currStreakLabel=F5C518&currStreakNum=FFFFFF&sideNums=FFFFFF&sideLabels=AAB3C8&dates=6B7A99&stroke=F5C518" height="150"/>
