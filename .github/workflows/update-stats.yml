@@ -6,7 +6,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["scripts/**"]
+    paths:
+      - "generate_stats.py"
+      - ".github/workflows/update-stats.yml"
 
 permissions:
   contents: write
@@ -16,14 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Ensure output directory exists
+        run: mkdir -p assets
+
       - name: Generate stats
-        run: python scripts/generate_stats.py
+        run: python generate_stats.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: DeSync02
+
       - name: Commit changes
         run: |
           git config user.name "alfred[bot]"
