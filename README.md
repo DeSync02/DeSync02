@@ -19,8 +19,8 @@
 |---|---|
 | **ALIAS** | DeSync02 |
 | **TRAINING** | Student — Machine Learning & Data Science |
-| **THE JUSTICE LEAGUE (ORGS)** | _add your orgs / clubs_ |
-| **BAT-CAVE (LOCATION)** | _add your city_ |
+| **THE JUSTICE LEAGUE (ORGS)** | Lyceum of The Philippines University |
+| **BAT-CAVE (LOCATION)** | Lagro, Quezon City |
 | **GADGETS** | VS Code · Jupyter · Colab |
 
 ## 🧰 UTILITY BELT
