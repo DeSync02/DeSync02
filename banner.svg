@@ -1,31 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%">
   <defs>
-    <radialGradient id="sig" cx="50%" cy="0%" r="90%">
-      <stop offset="0" stop-color="#f5c518" stop-opacity=".35"/>
-      <stop offset="1" stop-color="#f5c518" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0b0e17"/><stop offset="1" stop-color="#05060a"/>
+    <clipPath id="clip"><rect width="1000" height="320" rx="14"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0" stop-color="#ff7a2f"/>
+      <stop offset=".38" stop-color="#e8456f"/>
+      <stop offset=".72" stop-color="#7a2f9a"/>
+      <stop offset="1" stop-color="#241f66"/>
     </linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="moon" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#ffe35c"/><stop offset="1" stop-color="#f4b61c"/>
+    </radialGradient>
+    <pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <circle cx="4.5" cy="4.5" r="1.5" fill="#14091f" opacity=".28"/>
+    </pattern>
+    <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#05020b" stroke-width="1.6" opacity=".55"/>
+    </pattern>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/>
+    </filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <rect width="1000" height="280" rx="14" fill="url(#bg)"/>
-  <rect width="1000" height="280" rx="14" fill="url(#sig)"/>
-  <g fill="#10141f">
-    <rect x="0" y="215" width="60" height="65"/><rect x="60" y="190" width="45" height="90"/>
-    <rect x="105" y="225" width="70" height="55"/><rect x="175" y="170" width="40" height="110"/>
-    <rect x="215" y="205" width="80" height="75"/><rect x="295" y="185" width="50" height="95"/>
-    <rect x="345" y="225" width="90" height="55"/><rect x="565" y="215" width="80" height="65"/>
-    <rect x="645" y="180" width="45" height="100"/><rect x="690" y="220" width="70" height="55"/>
-    <rect x="760" y="165" width="42" height="115"/><rect x="802" y="200" width="75" height="80"/>
-    <rect x="877" y="180" width="50" height="100"/><rect x="927" y="215" width="73" height="65"/>
+
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="320" fill="url(#bg)"/>
+    <rect width="1000" height="320" fill="url(#dots)"/>
+
+    <!-- scratchy ink streaks -->
+    <g stroke="#14091f" stroke-opacity=".35" stroke-width="1.2">
+      <line x1="640" y1="0" x2="560" y2="320"/><line x1="660" y1="0" x2="590" y2="320"/>
+      <line x1="980" y1="0" x2="900" y2="320"/><line x1="950" y1="0" x2="880" y2="320"/>
+      <line x1="300" y1="0" x2="250" y2="320"/><line x1="330" y1="0" x2="290" y2="320"/>
+    </g>
+
+    <g transform="translate(40,12)">
+      <!-- the big Gotham moon -->
+      <circle cx="730" cy="92" r="112" fill="url(#moon)" filter="url(#glow)"/>
+      <circle cx="730" cy="92" r="112" fill="url(#dots)"/>
+
+      <g filter="url(#ink)">
+        <!-- cape / wings -->
+        <path d="M612,205 L545,118 L562,170 L520,150 L556,235 L505,320 L650,320 Z" fill="#1a0f33"/>
+        <path d="M848,205 L925,100 L908,165 L952,140 L912,235 L965,320 L810,320 Z" fill="#1a0f33"/>
+        <path d="M612,205 L545,118 L562,170 L520,150 L556,235 L505,320 L650,320 Z" fill="url(#hatch)"/>
+        <path d="M848,205 L925,100 L908,165 L952,140 L912,235 L965,320 L810,320 Z" fill="url(#hatch)"/>
+
+        <!-- torso -->
+        <path d="M600,320 L612,205 Q640,165 690,160 L770,160 Q822,165 850,205 L862,320 Z" fill="#2b2052" stroke="#0b0618" stroke-width="3"/>
+        <path d="M600,320 L612,205 Q640,165 690,160 L770,160 Q822,165 850,205 L862,320 Z" fill="url(#hatch)"/>
+        <!-- rim lights -->
+        <path d="M614,205 L602,318" stroke="#3fd0c9" stroke-width="4" opacity=".75" fill="none"/>
+        <path d="M846,205 L858,318" stroke="#ff5fa2" stroke-width="4" opacity=".75" fill="none"/>
+
+        <!-- abs -->
+        <g stroke="#0b0618" stroke-width="2" opacity=".7" fill="none">
+          <path d="M730,236 L730,320"/><path d="M690,250 Q730,262 770,250"/>
+          <path d="M688,278 Q730,290 772,278"/><path d="M692,304 Q730,314 768,304"/>
+        </g>
+
+        <!-- pauldrons -->
+        <ellipse cx="624" cy="190" rx="42" ry="30" fill="#3b2c72" stroke="#0b0618" stroke-width="3"/>
+        <ellipse cx="836" cy="190" rx="42" ry="30" fill="#3b2c72" stroke="#0b0618" stroke-width="3"/>
+        <ellipse cx="624" cy="190" rx="42" ry="30" fill="url(#hatch)"/>
+        <ellipse cx="836" cy="190" rx="42" ry="30" fill="url(#hatch)"/>
+        <g fill="#14102e" stroke="#0b0618" stroke-width="1.5">
+          <path d="M598,176 L602,150 L616,168Z"/><path d="M618,166 L626,140 L638,164Z"/><path d="M640,164 L652,142 L658,166Z"/>
+          <path d="M862,176 L858,150 L844,168Z"/><path d="M842,166 L834,140 L822,164Z"/><path d="M820,164 L808,142 L802,166Z"/>
+          <path d="M690,162 L696,146 L704,162Z"/><path d="M710,160 L716,142 L724,160Z"/>
+          <path d="M736,160 L744,142 L750,160Z"/><path d="M756,162 L764,146 L770,162Z"/>
+        </g>
+
+        <!-- raised left arm + battle axe -->
+        <line x1="582" y1="30" x2="560" y2="300" stroke="#0b0618" stroke-width="11" stroke-linecap="round"/>
+        <line x1="582" y1="30" x2="560" y2="300" stroke="#9a8cb5" stroke-width="6" stroke-linecap="round"/>
+        <path d="M614,188 L648,208 L602,112 L562,100 Z" fill="#3b2c72" stroke="#0b0618" stroke-width="3"/>
+        <path d="M614,188 L648,208 L602,112 L562,100 Z" fill="url(#hatch)"/>
+        <circle cx="578" cy="98" r="21" fill="#2f2358" stroke="#0b0618" stroke-width="3"/>
+        <path d="M586,20 L520,8 Q512,42 524,78 L586,66 Z" fill="#6b6a8a" stroke="#0b0618" stroke-width="3"/>
+        <path d="M586,20 L520,8 Q512,42 524,78 L586,66 Z" fill="url(#hatch)"/>
+        <path d="M520,8 Q512,42 524,78" stroke="#d9d4f2" stroke-width="3" fill="none"/>
+
+        <!-- right arm -->
+        <path d="M846,192 L884,218 L902,300 L850,310 Z" fill="#3b2c72" stroke="#0b0618" stroke-width="3"/>
+        <path d="M846,192 L884,218 L902,300 L850,310 Z" fill="url(#hatch)"/>
+
+        <!-- keyboard-emblem on the chest -->
+        <g transform="translate(688,188)">
+          <rect width="84" height="42" rx="6" fill="#eaa25b" stroke="#0b0618" stroke-width="2.5"/>
+          <g stroke="#0b0618" stroke-width="1.3" opacity=".85">
+            <line x1="0" y1="10.5" x2="84" y2="10.5"/><line x1="0" y1="21" x2="84" y2="21"/><line x1="0" y1="31.5" x2="84" y2="31.5"/>
+            <line x1="12" y1="0" x2="12" y2="42"/><line x1="24" y1="0" x2="24" y2="42"/><line x1="36" y1="0" x2="36" y2="42"/>
+            <line x1="48" y1="0" x2="48" y2="42"/><line x1="60" y1="0" x2="60" y2="42"/><line x1="72" y1="0" x2="72" y2="42"/>
+          </g>
+          <rect x="22" y="32.5" width="40" height="8" rx="2" fill="#0b0618" opacity=".35"/>
+        </g>
+
+        <!-- head -->
+        <rect x="714" y="146" width="32" height="20" fill="#14102e"/>
+        <path d="M702,132 Q696,92 712,76 L704,18 L726,62 Q730,60 734,62 L756,18 L748,76 Q764,92 758,132 Q744,154 730,154 Q716,154 702,132 Z" fill="#1c1535" stroke="#0b0618" stroke-width="3"/>
+        <path d="M702,132 Q696,92 712,76 L704,18 L726,62 Q730,60 734,62 L756,18 L748,76 Q764,92 758,132 Q744,154 730,154 Q716,154 702,132 Z" fill="url(#hatch)"/>
+        <path d="M708,112 Q730,104 752,112 Q757,140 730,156 Q703,140 708,112 Z" fill="#d98a73" stroke="#0b0618" stroke-width="2"/>
+        <path d="M712,121 Q730,166 748,121 Q730,128 712,121 Z" fill="#3b0d1a"/><ellipse cx="730" cy="142" rx="9" ry="6" fill="#e0556f"/>
+        <path d="M715,123 Q730,130 745,123 L743,129 Q730,135 717,129 Z" fill="#fff"/>
+        <path d="M709,99 L725,106 L722,111 L708,106 Z" fill="#fff"/>
+        <path d="M751,99 L735,106 L738,111 L752,106 Z" fill="#fff"/>
+      </g>
+    </g>
+
+    <!-- title -->
+    <text x="44" y="70" font-family="monospace" font-size="13" letter-spacing="6" fill="#14091f" font-weight="bold">// DARK NIGHTS : COMMITS</text>
+    <text x="48" y="172" font-family="Impact, 'Arial Black', sans-serif" font-size="88" letter-spacing="2" fill="#ff2f86" stroke="#ff2f86" stroke-width="6" stroke-linejoin="round">DESYNC02</text>
+    <text x="44" y="168" font-family="Impact, 'Arial Black', sans-serif" font-size="88" letter-spacing="2" fill="#14091f" stroke="#14091f" stroke-width="9" stroke-linejoin="round">DESYNC02</text>
+    <text x="44" y="168" font-family="Impact, 'Arial Black', sans-serif" font-size="88" letter-spacing="2" fill="#ffd21f">DESYNC02</text>
+    <rect x="44" y="204" width="430" height="34" fill="#14091f"/>
+    <text x="60" y="227" font-family="monospace" font-size="17" letter-spacing="5" fill="#ffd21f" font-weight="bold">THE DARK KNIGHT OF CODE</text>
+    <rect x="44" y="246" width="150" height="5" fill="#14091f"/>
   </g>
-  <g transform="translate(500,60)" filter="url(#glow)">
-    <ellipse rx="62" ry="36" fill="#f5c518"/>
-    <path d="M0,-18 C-6,-26 -10,-28 -14,-26 L-16,-34 L-26,-24 C-40,-30 -58,-26 -70,-14 C-62,-10 -56,-4 -52,6 C-44,-2 -36,-2 -30,4 C-24,2 -16,6 -12,14 C-8,18 -4,22 0,32 C4,22 8,18 12,14 C16,6 24,2 30,4 C36,-2 44,-2 52,6 C56,-4 62,-10 70,-14 C58,-26 40,-30 26,-24 L16,-34 L14,-26 C10,-28 6,-26 0,-18 Z" transform="scale(.8)" fill="#0b0e17"/>
-  </g>
-  <text x="500" y="26" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="8" fill="#6b7a99">THE DARK KNIGHT OF CODE</text>
-  <text x="500" y="170" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="92" letter-spacing="4" fill="#f5c518" stroke="#000" stroke-width="2">DESYNC02</text>
-  <text x="500" y="214" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="10" fill="#e8eaf0">I AM THE COMMIT</text>
-  <rect x="380" y="234" width="240" height="3" fill="#f5c518" opacity=".7"/>
 </svg>
