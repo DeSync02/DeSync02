@@ -2,7 +2,7 @@
 <rect width="1000" height="170" rx="12" fill="#07090f"/>
 <rect x="20" y="22" width="5" height="22" fill="#f5c518"/>
 <text x="36" y="40" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="4" fill="#fff">GOTHAM GAZETTE // GITHUB STATS</text>
-<text x="980" y="40" text-anchor="end" font-family="monospace" font-size="12" letter-spacing="2" fill="#6b7a99">UPDATED OCT 31, 2026</text>
+<text x="980" y="40" text-anchor="end" font-family="monospace" font-size="12" letter-spacing="2" fill="#6b7a99">UPDATED NOV 01, 2026</text>
 <g transform="translate(20,60)">
   <rect width="150" height="84" rx="10" fill="#0d1120" stroke="#f5c518" stroke-opacity=".4"/>
   <text x="75.0" y="43" text-anchor="middle" font-family="Impact, sans-serif" font-size="34" fill="#fff">34</text>
